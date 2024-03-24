@@ -11,6 +11,10 @@ def correct_csv():
     # Load the original CSV file with 'ISO-8859-1' encoding
     df = pd.read_csv(csv_path, encoding='ISO-8859-1', sep=';')
 
+    print(df.head())
+    df.info()
+    print(f"Original CSV file shape: {df.shape}")
+
     # Convert 'Tupakointi', 'Koettu onnellisuus', 'Paino' columns to integers
     df[['Tupakointi', 'Koettu onnellisuus', 'Paino']] = df[['Tupakointi', 'Koettu onnellisuus', 'Paino']].apply(pd.to_numeric, errors='coerce')
 
@@ -33,6 +37,8 @@ def correct_csv():
 
     # Fill any other missing values with an empty string
     df = df.fillna('')
+
+    print(f"Corrected CSV file shape: {df.shape}")
 
     # Save the corrected dataframe to a new CSV file
     df.to_csv(f"{script_dir}/Terveys_v3_corrected.csv", index=False, encoding='ISO-8859-1', mode='w')
