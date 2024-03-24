@@ -1,0 +1,105 @@
+[tool.poetry]
+name = "koneoppiminen"
+version = "1.0.0"
+description = "Envrioment for koneoppiminen course"
+authors = ["Aman Mughal <aman.mughal@amppa.dev>"]
+readme = "README.md"
+packages = [{include = "teh1"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pandas = "2.2.1"
+
+[tool.poetry.group.dev.dependencies]
+black = { version = "*", extras = ["jupyter"] }
+ruff = "*"
+pytest = "*"
+pytest-order = "*"
+mypy = "*"
+pkginfo = "*"
+wheel = "*"
+setuptools = "*"
+autopep8 = "*"
+isort = "*"
+flake8 = "*"
+pep8-naming = "*"
+pytest-asyncio = "*"
+coverage = "*"
+Sphinx = "*"
+nbsphinx = "*"
+furo = "*"
+sphinx-inline-tabs = "*"
+sphinx-copybutton = "*"
+sphinx-gallery = "*"
+sphinx-autodoc-typehints = "*"
+sphinx-autobuild = "*"
+matplotlib = "*"
+seaborn = "*"
+types-requests = "*"
+types-PyYAML = "*"
+types-python-dateutil = "*"
+jupyterlab-code-formatter = "*"
+jupyterlab-spellchecker = "*"
+pyinstrument = "*"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 88
+target-version = ["py311"]
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+  | node_modules
+)/
+'''
+
+
+[tool.ruff]
+select = ["E", "F"]
+ignore = ["N817", "N806", "N803", "N802", "N811", "N814"]
+exclude = [
+  ".bzr",
+  ".direnv",
+  ".eggs",
+  ".git",
+  ".hg",
+  ".mypy_cache",
+  ".nox",
+  ".pants.d",
+  ".pytype",
+  ".ruff_cache",
+  ".svn",
+  ".tox",
+  ".venv",
+  "__pypackages__",
+  "__pycache__",
+  "_build",
+  "buck-out",
+  "build",
+  "dist",
+  "node_modules",
+  "venv",
+]
+
+line-length = 120
+
+# Allow unused variables when underscore-prefixed.
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+target-version = "py311"
+
+[tool.ruff.mccabe]
+max-complexity = 10

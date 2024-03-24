@@ -1,0 +1,9 @@
+name: koneoppiminen-env
+channels:
+  - defaults
+dependencies:
+  - python=3.11.3
+  - pip=23.2.1
+
+  - pip:
+    - poetry==1.6.1
