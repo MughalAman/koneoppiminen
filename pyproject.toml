@@ -4,11 +4,13 @@ version = "1.0.0"
 description = "Envrioment for koneoppiminen course"
 authors = ["Aman Mughal <aman.mughal@amppa.dev>"]
 readme = "README.md"
-packages = [{include = "teh1"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
-pandas = "2.2.1"
+pandas = "*"
+matplotlib = "3.8.4"
+seaborn = "*"
+scikit-learn = "*"
 
 [tool.poetry.group.dev.dependencies]
 black = { version = "*", extras = ["jupyter"] }
@@ -25,16 +27,6 @@ flake8 = "*"
 pep8-naming = "*"
 pytest-asyncio = "*"
 coverage = "*"
-Sphinx = "*"
-nbsphinx = "*"
-furo = "*"
-sphinx-inline-tabs = "*"
-sphinx-copybutton = "*"
-sphinx-gallery = "*"
-sphinx-autodoc-typehints = "*"
-sphinx-autobuild = "*"
-matplotlib = "*"
-seaborn = "*"
 types-requests = "*"
 types-PyYAML = "*"
 types-python-dateutil = "*"
